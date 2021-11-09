@@ -558,11 +558,11 @@ suspend fun isPackageHibernationExemptBySystem(
     if (!exemptServicePkgs[pkg.packageName].isNullOrEmpty()) {
         return true
     }
-    if (Utils.isUserDisabledOrWorkProfile(user)) {
+    if (Utils.isUserDisabled(user)) {
         if (DEBUG_HIBERNATION_POLICY) {
             DumpableLog.i(
                 LOG_TAG,
-                "Exempted ${pkg.packageName} - $user is disabled or a work profile"
+                "Exempted ${pkg.packageName} - $user is disabled"
             )
         }
         return true
