@@ -590,11 +590,11 @@ suspend fun isPackageHibernationExemptBySystem(pkg: LightPackageInfo, user: User
         }
         return true
     }
-    if (Utils.isUserDisabledOrWorkProfile(user)) {
+    if (Utils.isUserDisabled(user)) {
         if (Log.isLoggable(LOG_TAG, Log.INFO)) {
             DumpableLog.i(
                 LOG_TAG,
-                "Exempted ${pkg.packageName} - $user is disabled or a work profile",
+                "Exempted ${pkg.packageName} - $user is disabled",
             )
         }
         return true
