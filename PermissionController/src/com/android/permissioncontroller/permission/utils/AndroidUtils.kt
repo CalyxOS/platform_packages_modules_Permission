@@ -41,10 +41,11 @@ val Context.application: Application get() = when (this) {
 }
 
 /**
- * The number of threads in the IPC thread pool. Set to the maximum number of binder threads allowed
- * to an app by the Android System.
+ * The number of threads in the IPC thread pool. If too many threads are used, it can lead to
+ * failed transactions as a result of running out of binder buffer space, for instance if a user
+ * has several child profiles. To avoid this, we deliberately choose a conservative thread count.
  */
-const val IPC_THREAD_POOL_COUNT = 8
+const val IPC_THREAD_POOL_COUNT = 4
 
 /**
  * A coroutine dispatcher with a fixed thread pool size, to be used for background tasks
