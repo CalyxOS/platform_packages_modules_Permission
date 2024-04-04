@@ -68,6 +68,24 @@
       "message": "Let\u0027s not do this annotation. isLocationAccuracyEnabled handles that.",
       "revId": "f5728ba20b6569a5e5555fdb4611d34706263e16",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4e519ce_8ea4b64f",
+        "filename": "PermissionController/src/com/android/permissioncontroller/permission/ui/model/AppPermissionViewModel.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-04-04T16:13:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64934d53_6663dd55",
+      "revId": "f5728ba20b6569a5e5555fdb4611d34706263e16",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
