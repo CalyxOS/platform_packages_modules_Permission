@@ -16,6 +16,40 @@
       "message": "There\u0027s nothing different between this and PS1 except the name of the method and its placement in the file.",
       "revId": "f5728ba20b6569a5e5555fdb4611d34706263e16",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4b4a481_bf274ed3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-04-04T16:06:42Z",
+      "side": 1,
+      "message": "This method exists already and does the same thing: https://cs.android.com/android/platform/superproject/main/+/87dd916ad9c262d7685ed34862b0cfd0d0361f33:packages/modules/Permission/PermissionController/src/com/android/permissioncontroller/permission/ui/model/grantPermissions/LocationGrantBehavior.kt;l\u003d104-107",
+      "revId": "f5728ba20b6569a5e5555fdb4611d34706263e16",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64934d53_6663dd55",
+        "filename": "PermissionController/src/com/android/permissioncontroller/permission/ui/model/AppPermissionViewModel.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-04-04T16:06:42Z",
+      "side": 1,
+      "message": "Let\u0027s not do this annotation. isLocationAccuracyEnabled handles that.",
+      "revId": "f5728ba20b6569a5e5555fdb4611d34706263e16",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
