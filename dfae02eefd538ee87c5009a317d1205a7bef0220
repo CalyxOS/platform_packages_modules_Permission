@@ -51,6 +51,24 @@
       "message": "Reviewed and +2\u0027d by AOSP but not yet merged there.",
       "revId": "dfae02eefd538ee87c5009a317d1205a7bef0220",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "142755d6_92842e34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-04-18T12:30:52Z",
+      "side": 1,
+      "message": "3027307: Hide \"Use precise location\" for unsupported apps | https://android-review.googlesource.com/c/platform/packages/modules/Permission/+/3027307",
+      "parentUuid": "be83544d_69d72c4a",
+      "revId": "dfae02eefd538ee87c5009a317d1205a7bef0220",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ],
   "submitRequirementResults": [
