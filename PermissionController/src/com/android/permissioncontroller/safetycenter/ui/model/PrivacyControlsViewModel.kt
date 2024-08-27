@@ -19,15 +19,19 @@ package com.android.permissioncontroller.safetycenter.ui.model
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.ClipboardManager
+import android.content.ContentResolver
+import android.content.ContentValues
 import android.content.Intent
 import android.hardware.SensorPrivacyManager
 import android.hardware.SensorPrivacyManager.Sensors
 import android.hardware.SensorPrivacyManager.TOGGLE_TYPE_SOFTWARE
+import android.net.Uri
 import android.os.Build
 import android.os.Process
 import android.os.UserManager
 import android.provider.DeviceConfig
 import android.provider.Settings
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
@@ -49,6 +53,7 @@ import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin
 @SuppressLint("MissingPermission")
 class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(app) {
 
+    private val TAG = this::class.simpleName
     private val sensorPrivacyManager: SensorPrivacyManager =
         app.getSystemService(SensorPrivacyManager::class.java)!!
     private val clipboardManager: ClipboardManager =
@@ -63,6 +68,11 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
     private val CONFIG_CAMERA_TOGGLE_ENABLED = app.getString(R.string.camera_toggle_enable_config)
     private val CAMERA_OFF_TIMEOUT = "camera_off_timeout" // Settings.Secure.CAMERA_OFF_TIMEOUT
     private val MIC_OFF_TIMEOUT = "mic_off_timeout" // Settings.Secure.MIC_OFF_TIMEOUT
+    // Sync with LineageSettings.Secure.CONTENT_URI
+    private val LINEAGE_SETTINGS_SECURE_URI = Uri.parse("content://lineagesettings/secure")
+    // Sync with LineageSettings.Secure.CLIPBOARD_AUTO_CLEAR_TIMEOUT
+    private val LINEAGE_SETTINGS_SECURE_CLIPBOARD_AUTO_CLEAR_TIMEOUT =
+        "clipboard_auto_clear_timeout"
 
     enum class Pref(val key: String, @StringRes val titleResId: Int) {
         MIC("privacy_mic_toggle", R.string.mic_toggle_title),
@@ -71,6 +81,8 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
         CAMERA_TIMEOUT("privacy_camera_timeout", R.string.camera_timeout_title),
         LOCATION("privacy_location_access", R.string.location_settings),
         CLIPBOARD("show_clip_access_notification", R.string.show_clip_access_notification_title),
+        CLIPBOARD_AUTO_CLEAR_TIMEOUT("clipboard_auto_clear_timeout",
+            R.string.clipboard_auto_clear_timeout_title),
         SHOW_PASSWORD("show_password", R.string.show_password_title);
 
         companion object {
@@ -136,6 +148,7 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
             Pref.SHOW_PASSWORD -> toggleShowPassword()
             Pref.CAMERA_TIMEOUT -> {}
             Pref.MIC_TIMEOUT -> {}
+            Pref.CLIPBOARD_AUTO_CLEAR_TIMEOUT -> {}
         }
     }
 
@@ -270,6 +283,73 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
             sensorTimeout,
             timeout
         )
+    }
+
+    fun readClipboardAutoClearTimeout(preference: ListPreference) {
+        try {
+            val currentSettingValueString: String? = app.contentResolver.query(
+                LINEAGE_SETTINGS_SECURE_URI,
+                arrayOf("value"),
+                "name =?",
+                arrayOf(LINEAGE_SETTINGS_SECURE_CLIPBOARD_AUTO_CLEAR_TIMEOUT), null
+            ).use { cursor ->
+                if (cursor?.moveToNext() == true) {
+                    cursor.getString(0)
+                } else {
+                    null
+                }
+            }
+            val currentSettingValue: Long? = currentSettingValueString?.toLongOrNull()
+            if (currentSettingValueString != null && currentSettingValue == null) {
+                Log.w(TAG, "clipboard_auto_clear_timeout is $currentSettingValueString"
+                    + " which is not a valid Long; will assume default value")
+            }
+            val matchingValueIndex = if (currentSettingValue == null) -1
+                else preference.entryValues.asList().indexOf(currentSettingValue.toString())
+            preference.setValueIndex(
+                if (matchingValueIndex == -1) {
+                    if (currentSettingValue != null) {
+                        Log.w(TAG, "Unsupported clipboard_auto_clear_timeout value"
+                            + " $currentSettingValue, assuming default (max)")
+                    }
+                    preference.entryValues.size - 1
+                }
+                else matchingValueIndex
+            )
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to read clipboard_auto_clear_timeout and/or set preference", e)
+        }
+    }
+
+    fun setClipboardAutoClearTimeout(timeout: Long): Boolean {
+        val values = ContentValues().apply {
+            put("value", timeout)
+        }
+        return app.contentResolver.replace(
+            LINEAGE_SETTINGS_SECURE_URI,
+            values,
+            "name =?",
+            arrayOf(LINEAGE_SETTINGS_SECURE_CLIPBOARD_AUTO_CLEAR_TIMEOUT)
+        )
+    }
+
+    fun ContentResolver.replace(
+        uri: Uri,
+        values: ContentValues,
+        where: String,
+        selectionArgs: Array<String>
+    ): Boolean {
+        val rowsUpdated = update(uri, values, where, selectionArgs)
+        if (rowsUpdated == 0) {
+            try {
+                insert(uri, values)
+                return true
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to write $values to $uri where $where ($selectionArgs)", e)
+            }
+            return false
+        }
+        return true
     }
 }
 

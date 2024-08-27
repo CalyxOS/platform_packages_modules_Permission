@@ -184,6 +184,12 @@ class PrivacySubpageFragment : SafetyCenterFragment() {
                     (newValue as String).toLong())
             }
         }
+        findPreference<ListPreference>(Pref.CLIPBOARD_AUTO_CLEAR_TIMEOUT.key)?.let {
+            privacyControlsViewModel.readClipboardAutoClearTimeout(it)
+            it.setOnPreferenceChangeListener { _, newValue ->
+                privacyControlsViewModel.setClipboardAutoClearTimeout((newValue as String).toLong())
+            }
+        }
     }
 
     companion object {
