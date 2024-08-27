@@ -83,6 +83,14 @@ public final class PrivacyControlsFragment extends PreferenceFragmentCompat {
                     (preference, newValue) -> mViewModel.setSensorTimeout(sensorTimeout,
                             Long.parseLong((String) newValue)));
         }
+
+        final ListPreference clipboardAutoClearTimeout =
+                findPreference(Pref.CLIPBOARD_AUTO_CLEAR_TIMEOUT.getKey());
+        mViewModel.readClipboardAutoClearTimeout(clipboardAutoClearTimeout);
+        clipboardAutoClearTimeout.setOnPreferenceChangeListener(
+                (preference, newValue) ->
+                        mViewModel.setClipboardAutoClearTimeout(
+                                Long.parseLong((String) newValue)));
     }
 
     private void setSwitchPreference(Map<Pref, PrefState> prefStates, Pref prefType) {

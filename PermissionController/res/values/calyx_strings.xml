@@ -29,4 +29,9 @@
     <!-- Describes the mic timeout [CHAR LIMIT=NONE] -->
     <string name="mic_timeout_description">Microphone access will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if not in use</string>
     <string name="mic_timeout_description2">Microphone access will not turn off automatically</string>
+
+    <!-- Label for clipboard auto clear [CHAR LIMIT=40] -->
+    <string name="clipboard_auto_clear_timeout_title">Clipboard auto clear</string>
+    <!-- Description for clipboard auto clear [CHAR LIMIT=NONE] -->
+    <string name="clipboard_auto_clear_timeout_summary">Clipboard will be automatically cleared after <xliff:g id="timeout_description">%1$s</xliff:g></string>
 </resources>
