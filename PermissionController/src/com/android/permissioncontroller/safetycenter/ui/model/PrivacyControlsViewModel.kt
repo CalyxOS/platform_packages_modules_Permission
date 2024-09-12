@@ -60,10 +60,12 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
         app.getString(R.string.show_access_notifications_default_config)
     private val CONFIG_MIC_TOGGLE_ENABLED = app.getString(R.string.mic_toggle_enable_config)
     private val CONFIG_CAMERA_TOGGLE_ENABLED = app.getString(R.string.camera_toggle_enable_config)
+    private val CAMERA_OFF_TIMEOUT = "camera_off_timeout" // Settings.Secure.CAMERA_OFF_TIMEOUT
 
     enum class Pref(val key: String, @StringRes val titleResId: Int) {
         MIC("privacy_mic_toggle", R.string.mic_toggle_title),
         CAMERA("privacy_camera_toggle", R.string.camera_toggle_title),
+        CAMERA_TIMEOUT("privacy_camera_timeout", R.string.camera_timeout_title),
         LOCATION("privacy_location_access", R.string.location_settings),
         CLIPBOARD("show_clip_access_notification", R.string.show_clip_access_notification_title),
         SHOW_PASSWORD("show_password", R.string.show_password_title);
@@ -123,13 +125,11 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
         }
 
     fun handlePrefClick(fragment: Fragment, pref: Pref, admin: EnforcedAdmin?) {
-        when (pref) {
-            Pref.MIC -> toggleSensorOrShowAdmin(fragment, Sensors.MICROPHONE, admin)
-            Pref.CAMERA -> toggleSensorOrShowAdmin(fragment, Sensors.CAMERA, admin)
-            Pref.LOCATION -> goToLocation(fragment)
-            Pref.CLIPBOARD -> toggleClipboard()
-            Pref.SHOW_PASSWORD -> toggleShowPassword()
-        }
+        if (pref == Pref.MIC) toggleSensorOrShowAdmin(fragment, Sensors.MICROPHONE, admin)
+        else if (pref == Pref.CAMERA) toggleSensorOrShowAdmin(fragment, Sensors.CAMERA, admin)
+        else if (pref == Pref.LOCATION) goToLocation(fragment)
+        else if (pref == Pref.CLIPBOARD) toggleClipboard()
+        else if (pref == Pref.SHOW_PASSWORD) toggleShowPassword()
     }
 
     private fun toggleSensorOrShowAdmin(fragment: Fragment, sensor: Int, admin: EnforcedAdmin?) {
@@ -217,6 +217,14 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
 
     private fun shouldDisplayShowPasswordToggle(): Boolean {
         return app.resources.getBoolean(R.bool.config_display_show_password_toggle)
+    }
+
+    fun setCameraTimeout(timeout: Long): Boolean {
+        return Settings.Secure.putLong(
+            app.contentResolver,
+            CAMERA_OFF_TIMEOUT,
+            timeout
+        )
     }
 }
 

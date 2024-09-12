@@ -73,6 +73,11 @@ public final class PrivacyControlsFragment extends PreferenceFragmentCompat {
                             mViewModel.handlePrefClick(this, Pref.LOCATION, null);
                             return true;
                         });
+
+        findPreference(Pref.CAMERA_TIMEOUT.getKey())
+                .setOnPreferenceChangeListener(
+                        (preference, newValue) -> mViewModel.setCameraTimeout(
+                                Long.parseLong((String) newValue)));
     }
 
     private void setSwitchPreference(Map<Pref, PrefState> prefStates, Pref prefType) {
