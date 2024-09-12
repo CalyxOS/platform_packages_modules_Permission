@@ -23,6 +23,7 @@ import android.safetycenter.SafetyCenterEntryGroup
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
 import com.android.permissioncontroller.Constants.EXTRA_SESSION_ID
@@ -173,7 +174,7 @@ class PrivacySubpageFragment : SafetyCenterFragment() {
             true
         }
 
-        val timeoutEntries = listOf(Pref.CAMERA_TIMEOUT)
+        val timeoutEntries = listOf(Pref.CAMERA_TIMEOUT, Pref.MIC_TIMEOUT)
         timeoutEntries.forEach { timeoutEntry ->
             val timeoutPreference: ListPreference? = findPreference(timeoutEntry.key)
             if (timeoutPreference != null) {
