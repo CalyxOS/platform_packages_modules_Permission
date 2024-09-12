@@ -177,6 +177,11 @@ class PrivacySubpageFragment : SafetyCenterFragment() {
         cameraTimeoutEntry?.setOnPreferenceChangeListener { preference, newValue ->
             Settings.Secure.putLong(preference.context.contentResolver,
                 Settings.Secure.CAMERA_OFF_TIMEOUT, (newValue as String).toLong())
+
+        val micTimeoutEntry: Preference? = findPreference(Pref.MIC_TIMEOUT.key)
+        micTimeoutEntry?.setOnPreferenceChangeListener { preference, newValue ->
+            Settings.Secure.putLong(preference.context.contentResolver,
+                Settings.Secure.MIC_OFF_TIMEOUT, (newValue as String).toLong())
         }
     }
 
