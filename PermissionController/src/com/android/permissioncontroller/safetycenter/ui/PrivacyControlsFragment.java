@@ -79,6 +79,11 @@ public final class PrivacyControlsFragment extends PreferenceFragmentCompat {
                 (preference, newValue) -> Settings.Secure.putLong(
                         preference.context.contentResolver, Settings.Secure.CAMERA_OFF_TIMEOUT,
                         Long.parseLong((String) newValue)));
+
+        findPreference(Pref.MIC_TIMEOUT.getKey()).setOnPreferenceChangeListener(
+                (preference, newValue) -> Settings.Secure.putLong(
+                        preference.context.contentResolver, Settings.Secure.MIC_OFF_TIMEOUT,
+                        Long.parseLong((String) newValue)));
     }
 
     private void setSwitchPreference(Map<Pref, PrefState> prefStates, Pref prefType) {
