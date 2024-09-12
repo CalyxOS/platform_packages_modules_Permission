@@ -18,7 +18,6 @@ package com.android.permissioncontroller.safetycenter.ui
 
 import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.os.Bundle
-import android.provider.Settings
 import android.safetycenter.SafetyCenterEntryGroup
 import android.util.Log
 import androidx.annotation.RequiresApi
@@ -176,6 +175,11 @@ class PrivacySubpageFragment : SafetyCenterFragment() {
         val cameraTimeoutEntry: Preference? = findPreference(Pref.CAMERA_TIMEOUT.key)
         cameraTimeoutEntry?.setOnPreferenceChangeListener { _, newValue ->
             privacyControlsViewModel.setCameraTimeout((newValue as String).toLong())
+        }
+
+        val micTimeoutEntry: Preference? = findPreference(Pref.MIC_TIMEOUT.key)
+        micTimeoutEntry?.setOnPreferenceChangeListener { _, newValue ->
+            privacyControlsViewModel.setMicTimeout((newValue as String).toLong())
         }
     }
 

@@ -33,4 +33,9 @@
     <string name="camera_timeout_title">Camera timeout</string>
     <!-- Describes the camera timeout [CHAR LIMIT=NONE] -->
     <string name="camera_timeout_description">Camera will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if not in use</string>
+
+    <!-- Label for the mic timeout list [CHAR LIMIT=40] -->
+    <string name="mic_timeout_title">Microphone timeout</string>
+    <!-- Describes the mic timeout [CHAR LIMIT=NONE] -->
+    <string name="mic_timeout_description">Microphone will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if not in use</string>
 </resources>

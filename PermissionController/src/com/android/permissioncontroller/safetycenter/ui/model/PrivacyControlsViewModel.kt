@@ -61,9 +61,11 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
     private val CONFIG_MIC_TOGGLE_ENABLED = app.getString(R.string.mic_toggle_enable_config)
     private val CONFIG_CAMERA_TOGGLE_ENABLED = app.getString(R.string.camera_toggle_enable_config)
     private val CAMERA_OFF_TIMEOUT = "camera_off_timeout" // Settings.Secure.CAMERA_OFF_TIMEOUT
+    private val MIC_OFF_TIMEOUT = "mic_off_timeout" // Settings.Secure.MIC_OFF_TIMEOUT
 
     enum class Pref(val key: String, @StringRes val titleResId: Int) {
         MIC("privacy_mic_toggle", R.string.mic_toggle_title),
+        MIC_TIMEOUT("privacy_mic_timeout", R.string.mic_timeout_title),
         CAMERA("privacy_camera_toggle", R.string.camera_toggle_title),
         CAMERA_TIMEOUT("privacy_camera_timeout", R.string.camera_timeout_title),
         LOCATION("privacy_location_access", R.string.location_settings),
@@ -223,6 +225,14 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
         return Settings.Secure.putLong(
             app.contentResolver,
             CAMERA_OFF_TIMEOUT,
+            timeout
+        )
+    }
+
+    fun setMicTimeout(timeout: Long): Boolean {
+        return Settings.Secure.putLong(
+            app.contentResolver,
+            MIC_OFF_TIMEOUT,
             timeout
         )
     }
