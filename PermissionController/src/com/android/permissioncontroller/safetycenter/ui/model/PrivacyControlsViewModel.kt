@@ -64,6 +64,7 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
     enum class Pref(val key: String, @StringRes val titleResId: Int) {
         MIC("privacy_mic_toggle", R.string.mic_toggle_title),
         CAMERA("privacy_camera_toggle", R.string.camera_toggle_title),
+        CAMERA_TIMEOUT("privacy_camera_timeout", R.string.camera_timeout_title),
         LOCATION("privacy_location_access", R.string.location_settings),
         CLIPBOARD("show_clip_access_notification", R.string.show_clip_access_notification_title),
         SHOW_PASSWORD("show_password", R.string.show_password_title);

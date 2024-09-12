@@ -18,6 +18,7 @@ package com.android.permissioncontroller.safetycenter.ui;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 
 import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProvider;
@@ -73,6 +74,11 @@ public final class PrivacyControlsFragment extends PreferenceFragmentCompat {
                             mViewModel.handlePrefClick(this, Pref.LOCATION, null);
                             return true;
                         });
+
+        findPreference(Pref.CAMERA_TIMEOUT.getKey()).setOnPreferenceChangeListener(
+                (preference, newValue) -> Settings.Secure.putLong(
+                        preference.context.contentResolver, Settings.Secure.CAMERA_OFF_TIMEOUT,
+                        Long.parseLong((String) newValue)));
     }
 
     private void setSwitchPreference(Map<Pref, PrefState> prefStates, Pref prefType) {
