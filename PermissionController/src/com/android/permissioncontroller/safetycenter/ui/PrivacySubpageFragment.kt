@@ -18,11 +18,11 @@ package com.android.permissioncontroller.safetycenter.ui
 
 import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.os.Bundle
-import android.provider.Settings
 import android.safetycenter.SafetyCenterEntryGroup
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
 import com.android.permissioncontroller.Constants.EXTRA_SESSION_ID
@@ -173,10 +173,18 @@ class PrivacySubpageFragment : SafetyCenterFragment() {
             true
         }
 
-        val cameraTimeoutEntry: Preference? = findPreference(Pref.CAMERA_TIMEOUT.key)
-        cameraTimeoutEntry?.setOnPreferenceChangeListener { _, newValue ->
-            privacyControlsViewModel.setCameraTimeout((newValue as String).toLong())
+        val timeoutEntries = listOf(Pref.CAMERA_TIMEOUT, Pref.MIC_TIMEOUT)
+        timeoutEntries.forEach { timeoutEntry ->
+            val timeoutPreference: ListPreference? = findPreference(timeoutEntry.key)
+            if (timeoutPreference != null) {
+                privacyControlsViewModel.setSensorTimeout(timeoutPreference)
+            }
+            timeoutPreference?.setOnPreferenceChangeListener { _, newValue ->
+                privacyControlsViewModel.setSensorTimeout(timeoutPreference,
+                    (newValue as String).toLong())
+            }
         }
+
     }
 
     companion object {
