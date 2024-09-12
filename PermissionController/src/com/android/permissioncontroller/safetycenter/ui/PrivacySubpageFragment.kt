@@ -18,6 +18,7 @@ package com.android.permissioncontroller.safetycenter.ui
 
 import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.os.Bundle
+import android.provider.Settings
 import android.safetycenter.SafetyCenterEntryGroup
 import android.util.Log
 import androidx.annotation.RequiresApi
@@ -170,6 +171,18 @@ class PrivacySubpageFragment : SafetyCenterFragment() {
         locationEntry?.setOnPreferenceClickListener {
             privacyControlsViewModel.handlePrefClick(this, Pref.LOCATION, null)
             true
+        }
+
+        val timeoutEntries = listOf(Pref.CAMERA_TIMEOUT)
+        timeoutEntries.forEach { timeoutEntry ->
+            val timeoutPreference: ListPreference? = findPreference(timeoutEntry.key)
+            if (timeoutPreference != null) {
+                privacyControlsViewModel.setSensorTimeout(timeoutPreference)
+            }
+            timeoutPreference?.setOnPreferenceChangeListener { _, newValue ->
+                privacyControlsViewModel.setSensorTimeout(timeoutPreference,
+                    (newValue as String).toLong())
+            }
         }
     }
 
