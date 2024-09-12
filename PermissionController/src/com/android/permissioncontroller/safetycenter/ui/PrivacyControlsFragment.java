@@ -21,6 +21,7 @@ import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.permissioncontroller.R;
@@ -29,6 +30,7 @@ import com.android.permissioncontroller.safetycenter.ui.model.PrivacyControlsVie
 import com.android.permissioncontroller.safetycenter.ui.model.PrivacyControlsViewModel.PrefState;
 import com.android.permissioncontroller.safetycenter.ui.model.PrivacyControlsViewModelFactory;
 
+import java.util.List;
 import java.util.Map;
 
 /** Fragment that shows several privacy toggle controls, alongside a link to location settings */
@@ -74,7 +76,7 @@ public final class PrivacyControlsFragment extends PreferenceFragmentCompat {
                             return true;
                         });
 
-        for (Pref pref : List.of(Pref.CAMERA_TIMEOUT)) {
+        for (Pref pref : List.of(Pref.CAMERA_TIMEOUT, Pref.MIC_TIMEOUT)) {
             ListPreference sensorTimeout = findPreference(pref.getKey());
             mViewModel.setSensorTimeout(sensorTimeout);
             sensorTimeout.setOnPreferenceChangeListener(
