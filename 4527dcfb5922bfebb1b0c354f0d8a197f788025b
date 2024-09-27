@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71b487f3_bdbd267e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-09-27T16:28:32Z",
+      "side": 1,
+      "message": "Nvm, was trying to debug by setting very frequent checks, but periodic jobs cannot be run more than every 15 minutes",
+      "revId": "4527dcfb5922bfebb1b0c354f0d8a197f788025b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
