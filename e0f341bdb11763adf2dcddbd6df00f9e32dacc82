@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b1c7ecb_3705a241",
+        "filename": "PermissionController/res/values/calyx_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-11-21T23:24:21Z",
+      "side": 1,
+      "message": "By default, this is blank at the moment, and the never entry doesn\u0027t quite work grammatically either",
+      "range": {
+        "startLine": 40,
+        "startChar": 74,
+        "endLine": 40,
+        "endChar": 123
+      },
+      "revId": "e0f341bdb11763adf2dcddbd6df00f9e32dacc82",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
