@@ -16,6 +16,24 @@
       "message": "PS1: 14r15 merge, conflicts, fixed using 15 code\nPS2: Entire 15 commit applied.\n\nThus the diff between PS1 and PS2 is the diff in the 14 and 15 commits",
       "revId": "133dec7dd8ff942f5c7fdb634f5f5beb7d1b45c0",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91afe9b5_00f9b10b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-12-02T22:29:54Z",
+      "side": 1,
+      "message": "I think it makes sense to apply the 15 commit",
+      "parentUuid": "1004dfd4_8e7d3861",
+      "revId": "133dec7dd8ff942f5c7fdb634f5f5beb7d1b45c0",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
