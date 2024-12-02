@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1004dfd4_8e7d3861",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-02T19:40:34Z",
+      "side": 1,
+      "message": "PS1: 14r15 merge, conflicts, fixed using 15 code\nPS2: Entire 15 commit applied.\n\nThus the diff between PS1 and PS2 is the diff in the 14 and 15 commits",
+      "revId": "133dec7dd8ff942f5c7fdb634f5f5beb7d1b45c0",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
