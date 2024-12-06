@@ -143,9 +143,6 @@ object KotlinUtils {
     /** Whether to show the location indicators. */
     private const val PROPERTY_LOCATION_INDICATORS_ENABLED = "location_indicators_enabled"
 
-    /** Whether to show 7-day toggle in privacy hub. */
-    private const val PRIVACY_DASHBOARD_7_DAY_TOGGLE = "privacy_dashboard_7_day_toggle"
-
     /** Whether to show the photo picker option in permission prompts. */
     private const val PROPERTY_PHOTO_PICKER_PROMPT_ENABLED = "photo_picker_prompt_enabled"
 
@@ -163,10 +160,6 @@ object KotlinUtils {
     /** Whether the safety label changes job should only be run when the device is idle. */
     private const val PROPERTY_SAFETY_LABEL_CHANGES_JOB_RUN_WHEN_IDLE =
         "safety_label_changes_job_run_when_idle"
-
-    /** Whether the kill switch is set for [SafetyLabelChangesJobService]. */
-    private const val PROPERTY_SAFETY_LABEL_CHANGES_JOB_SERVICE_KILL_SWITCH =
-        "safety_label_changes_job_service_kill_switch"
 
     data class Quadruple<out A, out B, out C, out D>(
         val first: A,
@@ -205,21 +198,6 @@ object KotlinUtils {
     @ChecksSdkIntAtLeast(Build.VERSION_CODES.S)
     fun isLocationAccuracyEnabled(): Boolean {
         return SdkLevel.isAtLeastS()
-    }
-
-    /**
-     * Whether we should enable the 7-day toggle in privacy dashboard
-     *
-     * @return whether the flag is enabled
-     */
-    @ChecksSdkIntAtLeast(Build.VERSION_CODES.S)
-    fun is7DayToggleEnabled(): Boolean {
-        return SdkLevel.isAtLeastS() &&
-            DeviceConfig.getBoolean(
-                DeviceConfig.NAMESPACE_PRIVACY,
-                PRIVACY_DASHBOARD_7_DAY_TOGGLE,
-                false
-            )
     }
 
     /**
@@ -278,20 +256,6 @@ object KotlinUtils {
             !DeviceUtils.isWear(context)
     }
 
-    /**
-     * Whether the kill switch is set for [SafetyLabelChangesJobService]. If {@code true}, the
-     * service is effectively disabled and will not run or schedule any jobs.
-     */
-    @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE, codename = "UpsideDownCake")
-    fun safetyLabelChangesJobServiceKillSwitch(): Boolean {
-        return SdkLevel.isAtLeastU() &&
-            DeviceConfig.getBoolean(
-                DeviceConfig.NAMESPACE_PRIVACY,
-                PROPERTY_SAFETY_LABEL_CHANGES_JOB_SERVICE_KILL_SWITCH,
-                false
-            )
-    }
-
     /** How often the safety label changes job will run. */
     @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE, codename = "UpsideDownCake")
     fun getSafetyLabelChangesJobIntervalMillis(): Long {
@@ -299,16 +263,6 @@ object KotlinUtils {
             DeviceConfig.NAMESPACE_PRIVACY,
             PROPERTY_SAFETY_LABEL_CHANGES_JOB_INTERVAL_MILLIS,
             Duration.ofDays(30).toMillis()
-        )
-    }
-
-    /** Whether the safety label changes job should only be run when the device is idle. */
-    @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE, codename = "UpsideDownCake")
-    fun runSafetyLabelChangesJobOnlyWhenDeviceIdle(): Boolean {
-        return DeviceConfig.getBoolean(
-            DeviceConfig.NAMESPACE_PRIVACY,
-            PROPERTY_SAFETY_LABEL_CHANGES_JOB_RUN_WHEN_IDLE,
-            true
         )
     }
 
