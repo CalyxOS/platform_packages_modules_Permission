@@ -22,6 +22,30 @@
       },
       "revId": "a2489befbdcba05fc2c4aa44256cd29971095b86",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7093da4_895233cd",
+        "filename": "PermissionController/res/values/calyx_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2025-01-28T00:30:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8a10302_4bee9800",
+      "range": {
+        "startLine": 35,
+        "startChar": 73,
+        "endLine": 35,
+        "endChar": 121
+      },
+      "revId": "a2489befbdcba05fc2c4aa44256cd29971095b86",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
