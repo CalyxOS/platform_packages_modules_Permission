@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df3f233d_5d0eb8e0",
+        "filename": "PermissionController/res/values/calyx_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2025-04-07T13:24:58Z",
+      "side": 1,
+      "message": "```suggestion\n    \u003cstring name\u003d\"camera_timeout_description\"\u003eCamera access will turn off after \u003cxliff:g id\u003d\"timeout_description\"\u003e%1$s\u003c/xliff:g\u003e if not in use\u003c/string\u003e\n    \u003cstring name\u003d\"camera_timeout_description2\"\u003eCamera access will not turn off automatically\u003c/string\u003e\n```\n---\n@sagecheng@calyxinstitute.org Thoughts on this wording? See [this GitLab comment](https://gitlab.com/CalyxOS/calyxos/-/issues/1597#note_2433910645) for a screenshot of how this feature looks, prior to the suggested change above.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 82
+      },
+      "revId": "cb245530818d36e7bd999430f9ca402be5d52c03",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
