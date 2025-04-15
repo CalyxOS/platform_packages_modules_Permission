@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9db5a1a9_91d586d8",
+        "filename": "PermissionController/res/values/calyx_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2025-04-15T21:28:31Z",
+      "side": 1,
+      "message": "```suggestion\n    \u003cstring name\u003d\"mic_timeout_description\"\u003eMicrophone access will turn off after \u003cxliff:g id\u003d\"timeout_description\"\u003e%1$s\u003c/xliff:g\u003e if not in use\u003c/string\u003e\n    \u003cstring name\u003d\"mic_timeout_description2\"\u003eMicrophone access will not turn off automatically\u003c/string\u003e\n```",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 83
+      },
+      "revId": "2d0cd16f8c7f844791ecf960bba010a207172e24",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
