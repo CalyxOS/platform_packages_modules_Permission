@@ -46,6 +46,30 @@
       },
       "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5324d13b_52b74de3",
+        "filename": "PermissionController/src/com/android/permissioncontroller/safetycenter/ui/model/PrivacyControlsViewModel.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2025-04-16T17:52:33Z",
+      "side": 0,
+      "message": "Makes sense. What about keeping the `when` and adding something like `else -\u003e {}`? Should mean only one new line.\n\nSee e.g. https://medium.com/@angli.fernando/when-else-in-kotlin-does-nothing-ef845e44b62d",
+      "parentUuid": "7163a50d_d4a0d8f6",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 132,
+        "endChar": 9
+      },
+      "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
