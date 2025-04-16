@@ -46,6 +46,30 @@
       },
       "revId": "cb245530818d36e7bd999430f9ca402be5d52c03",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e16c746b_9e92960d",
+        "filename": "PermissionController/res/values/calyx_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2025-04-16T09:31:49Z",
+      "side": 1,
+      "message": "Applied the suggestion",
+      "parentUuid": "90418527_b802e9f3",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 82
+      },
+      "revId": "cb245530818d36e7bd999430f9ca402be5d52c03",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
