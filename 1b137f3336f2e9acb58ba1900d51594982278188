@@ -70,6 +70,30 @@
       },
       "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ea68453_97a7d91e",
+        "filename": "PermissionController/src/com/android/permissioncontroller/safetycenter/ui/model/PrivacyControlsViewModel.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2025-04-16T18:00:03Z",
+      "side": 0,
+      "message": "Or we could keep the compile-time guarantee provided by `when` and just add `Pref.CAMERA_TIMEOUT -\u003e {}` to handle that case. Probably better overall.",
+      "parentUuid": "5324d13b_52b74de3",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 132,
+        "endChar": 9
+      },
+      "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
