@@ -94,6 +94,30 @@
       },
       "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "966fc707_d612841b",
+        "filename": "PermissionController/src/com/android/permissioncontroller/safetycenter/ui/model/PrivacyControlsViewModel.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2025-04-16T18:11:59Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "8ea68453_97a7d91e",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 132,
+        "endChar": 9
+      },
+      "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
