@@ -22,6 +22,30 @@
       },
       "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7163a50d_d4a0d8f6",
+        "filename": "PermissionController/src/com/android/permissioncontroller/safetycenter/ui/model/PrivacyControlsViewModel.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2025-04-16T17:48:19Z",
+      "side": 0,
+      "message": "It is necessary since when block requires each pref to be handled. We\u0027re avoiding/skipping the new one that\u0027s declared above",
+      "parentUuid": "e2b649bb_e5565353",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 132,
+        "endChar": 9
+      },
+      "revId": "1b137f3336f2e9acb58ba1900d51594982278188",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
