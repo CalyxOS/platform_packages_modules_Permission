@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71de1d86_f83951f1",
+        "filename": "PermissionController/res/values/calyx_strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-05-05T11:30:00Z",
+      "side": 1,
+      "message": "Just noticed that the file is being added here in this commit, and thus weblate setup is pending.",
+      "revId": "5682a315f604e766c6ecc3d4519eed3766cddc5b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
