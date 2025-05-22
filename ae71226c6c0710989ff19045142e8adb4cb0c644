@@ -16,6 +16,24 @@
       "message": "Interesting, I wouldn\u0027t have thought of this approach! Nice.\n\nHowever, with this, we lose the benefits of using Lineage Settings (less code changes to AOSP, like the Settings patch), and instead start going towards the opposite, where it\u0027s needing more code to do it this way, than to just use plain AOSP Settings.\n\nThus, I don\u0027t see any benefit of using a Lineage Setting like this. It\u0027s elegant code, but the maintenance aspect worries me, and I\u0027d be fine with that if there was some benefit to it vs other options.\n\nI\u0027d like to just leave it in the old place in Settings at this point to ship it in a timely fashion, and have the least amount of ongoing maintenance needed.",
       "revId": "ae71226c6c0710989ff19045142e8adb4cb0c644",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a890862_e3fd8b82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2025-05-22T13:25:45Z",
+      "side": 1,
+      "message": "Can you tell me more about the anticipated ongoing maintenance? I guess I don\u0027t see it.\n\nThere are three new methods used here, vs if this were a standard Android setting: readClipboardAutoClearTimeout, setClipboardAutoClearTimeout, and setNameValuePair. They\u0027re added sequentially, as standalone methods that don\u0027t touch anything else, so they\u0027ll apply cleanly. And the way they interact with LineageSettings is not something I expect to change any time soon. It\u0027s pretty standard. I think we lose the Lineage validators, but that should be it.\n\nApart from that, the added code is similar to that for mic timeout and camera timeout (and was based on that code).\n\nI definitely agree we should have a cleaner way, with less boilerplate, to access the settings, but this kind of thing hasn\u0027t always been a blocker, historically - just sometimes.",
+      "parentUuid": "225ff59d_6490c9dd",
+      "revId": "ae71226c6c0710989ff19045142e8adb4cb0c644",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
