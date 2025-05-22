@@ -34,6 +34,24 @@
       "parentUuid": "225ff59d_6490c9dd",
       "revId": "ae71226c6c0710989ff19045142e8adb4cb0c644",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45e805e2_65401093",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-05-22T13:32:26Z",
+      "side": 1,
+      "message": "It\u0027s more just the fact that a 9-line Settings xml patch excluding strings now has turned into something much bigger.\n\nThat xml patch was 9-lines because it was using Lineage Settings. This one is bigger because of that - at which point, why are we using Lineage Settings? Why not just use AOSP Settings? It\u0027d need lesser code too, since at that point it becomes a simpler `Settings.get`/`Settings.put`.\n\nI agree that the interaction with LineageSettings is not something expected to change any time soon.\n\n\nEvery time we added a new Setting to Calyx, I bring up the fact that we should try to do it leaner, in Lineage Parts if possible, or if not, as a Lineage Setting, to keep the AOSP changes minimal. Not everything has been like that, but if you notice, most recent additions have been, and that helps with rebasing.",
+      "parentUuid": "5a890862_e3fd8b82",
+      "revId": "ae71226c6c0710989ff19045142e8adb4cb0c644",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
