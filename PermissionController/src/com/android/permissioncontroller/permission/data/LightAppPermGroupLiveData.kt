@@ -30,7 +30,6 @@ import android.os.UserHandle
 import android.permission.PermissionManager
 import android.util.Log
 import com.android.permissioncontroller.PermissionControllerApplication
-import com.android.permissioncontroller.permission.compat.AppOpsManagerCompat
 import com.android.permissioncontroller.permission.model.livedatatypes.LightAppPermGroup
 import com.android.permissioncontroller.permission.model.livedatatypes.LightPackageInfo
 import com.android.permissioncontroller.permission.model.livedatatypes.LightPermission
@@ -278,12 +277,7 @@ private constructor(
             }
             // This is the storage group, and the gallery app. Check the write media app op
             val appOps = app.getSystemService(AppOpsManager::class.java)
-            return AppOpsManagerCompat.checkOpRawNoThrow(
-                appOps,
-                OPSTR_WRITE_MEDIA_IMAGES,
-                uid,
-                packageName,
-            ) == MODE_ALLOWED
+            return appOps.checkOpNoThrow(OPSTR_WRITE_MEDIA_IMAGES, uid, packageName) == MODE_ALLOWED
         }
     }
 }
