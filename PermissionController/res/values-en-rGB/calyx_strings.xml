@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timeout_summary_30secs">30 seconds</string>
+    <string name="timeout_summary_1min">1 minute</string>
+    <string name="timeout_summary_8hours">8 hours</string>
+</resources>
