@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="timeout_summary_never">Niciodată</string>
+    <string name="timeout_summary_15secs">15 secunde</string>
+    <string name="timeout_summary_30secs">30 de secunde</string>
+    <string name="timeout_summary_1min">1 minut</string>
+    <string name="timeout_summary_2mins">2 minute</string>
+    <string name="timeout_summary_5mins">5 minute</string>
+    <string name="timeout_summary_10mins">10 minute</string>
+    <string name="timeout_summary_30mins">30 de minute</string>
+    <string name="timeout_summary_1hour">1 oră</string>
+    <string name="timeout_summary_2hours">2 ore</string>
+    <string name="timeout_summary_4hours">4 ore</string>
+    <string name="timeout_summary_8hours">8 ore</string>
+    <string name="camera_timeout_title">Timp expirare cameră</string>
+    <string name="camera_timeout_description">Accesul la cameră va fi oprit după <xliff:g id="timeout_description">%1$s</xliff:g> dacă nu este folosită</string>
+    <string name="camera_timeout_description2">Accesul la cameră va fi oprit automat</string>
+    <string name="mic_timeout_title">Timp expirare microfon</string>
+    <string name="mic_timeout_description">Accesul la microfon va fi oprit după <xliff:g id="timeout_description">%1$s</xliff:g> dacă nu este folosit</string>
+    <string name="mic_timeout_description2">Accesul la microfon nu va fi oprit automat</string>
+</resources>
