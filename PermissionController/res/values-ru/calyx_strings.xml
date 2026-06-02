@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="timeout_summary_never">Никогда</string>
+    <string name="timeout_summary_15secs">15 секунд</string>
+    <string name="timeout_summary_30secs">30 секунд</string>
+    <string name="timeout_summary_1min">1 минута</string>
+    <string name="timeout_summary_2mins">2 минуты</string>
+    <string name="timeout_summary_5mins">5 минут</string>
+    <string name="timeout_summary_10mins">10 минут</string>
+    <string name="timeout_summary_30mins">30 минут</string>
+    <string name="timeout_summary_1hour">1 час</string>
+    <string name="timeout_summary_2hours">2 часа</string>
+    <string name="timeout_summary_4hours">4 часа</string>
+    <string name="timeout_summary_8hours">8 часов</string>
+    <string name="camera_timeout_title">Тайм-аут камеры</string>
+    <string name="camera_timeout_description">Доступ к камере будет отключен через <xliff:g id="timeout_description">%1$s</xliff:g> если она не используется</string>
+    <string name="camera_timeout_description2">Доступ к камере не будет отключен автоматически</string>
+    <string name="mic_timeout_title">Тайм-аут микрофона</string>
+    <string name="mic_timeout_description">Доступ к микрофону будет отключен через <xliff:g id="timeout_description">%1$s</xliff:g> если он не используется</string>
+    <string name="mic_timeout_description2">Доступ к микрофону не будет отключен автоматически</string>
+</resources>
