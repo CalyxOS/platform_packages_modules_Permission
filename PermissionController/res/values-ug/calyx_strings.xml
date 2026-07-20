@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="timeout_summary_never">ھەرگىز</string>
+    <string name="timeout_summary_15secs">15 سېكۇنت</string>
+    <string name="timeout_summary_30secs">30 سېكۇنت</string>
+    <string name="timeout_summary_1min">1 مىنۇت</string>
+    <string name="timeout_summary_2mins">2 مىنۇت</string>
+    <string name="timeout_summary_5mins">5 مىنۇت</string>
+    <string name="timeout_summary_10mins">10 مىنۇت</string>
+    <string name="timeout_summary_30mins">30 مىنۇت</string>
+    <string name="timeout_summary_1hour">1 سائەت</string>
+    <string name="timeout_summary_2hours">2 سائەت</string>
+    <string name="timeout_summary_4hours">4 سائەت</string>
+    <string name="timeout_summary_8hours">8 سائەت</string>
+    <string name="camera_timeout_title">كامېرا ۋاقتى توشتى</string>
+    <string name="camera_timeout_description">ئەگەر ئىشلىتىلمىسە <xliff:g id="timeout_description">%1$s</xliff:g> دىن كېيىن كامېرا زىيارەت ئىجازىتى تاقىلىدۇ</string>
+    <string name="camera_timeout_description2">كامېرا زىيارەت ئىجازىتى ئۆزلۈكىدىن تاقالمايدۇ</string>
+    <string name="mic_timeout_title">مىكروفون ۋاقتى توشتى</string>
+    <string name="mic_timeout_description">ئەگەر ئىشلىتىلمىسە <xliff:g id="timeout_description">%1$s</xliff:g> دىن كېيىن مىكروفون زىيارەت ئىجازىتى تاقىلىدۇ</string>
+    <string name="mic_timeout_description2">مىكروفون زىيارەت ئىجازىتى ئۆزلۈكىدىن تاقالمايدۇ</string>
 </resources>

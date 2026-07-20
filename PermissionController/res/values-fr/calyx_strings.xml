@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="timeout_summary_never">Jamais</string>
+    <string name="timeout_summary_15secs">15 secondes</string>
+    <string name="timeout_summary_30secs">30 secondes</string>
+    <string name="timeout_summary_1min">1 minute</string>
+    <string name="timeout_summary_2mins">2 minutes</string>
+    <string name="timeout_summary_5mins">5 minutes</string>
+    <string name="timeout_summary_10mins">10 minutes</string>
+    <string name="timeout_summary_30mins">30 minutes</string>
+    <string name="timeout_summary_1hour">1 heure</string>
+    <string name="timeout_summary_2hours">2 heures</string>
+    <string name="timeout_summary_4hours">4 heures</string>
 </resources>
