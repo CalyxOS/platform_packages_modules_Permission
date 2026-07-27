@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="timeout_summary_15secs">15 secondi</string>
+    <string name="timeout_summary_30secs">30 secondi</string>
+    <string name="timeout_summary_1min">1 minuto</string>
+    <string name="timeout_summary_2mins">2 minuti</string>
+    <string name="timeout_summary_5mins">5 minuti</string>
+    <string name="timeout_summary_10mins">10 minuti</string>
+    <string name="timeout_summary_30mins">30 minuti</string>
+    <string name="timeout_summary_1hour">1 ora</string>
+    <string name="timeout_summary_2hours">2 ore</string>
+    <string name="timeout_summary_4hours">4 ore</string>
+    <string name="timeout_summary_8hours">8 ore</string>
+    <string name="camera_timeout_description2">L\'accesso alla fotocameta non si disattiverà automaticamente</string>
+    <string name="mic_timeout_description2">L\'accesso al microfono non si disattiverà automaticamente</string>
 </resources>
