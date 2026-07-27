@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="timeout_summary_never">Asla</string>
+    <string name="timeout_summary_15secs">15 saniye</string>
+    <string name="timeout_summary_30secs">30 saniye</string>
+    <string name="timeout_summary_1min">1 dakika</string>
+    <string name="timeout_summary_2mins">2 dakika</string>
+    <string name="timeout_summary_5mins">5 dakika</string>
+    <string name="timeout_summary_10mins">10 dakika</string>
+    <string name="timeout_summary_30mins">30 dakika</string>
+    <string name="timeout_summary_1hour">1 saat</string>
+    <string name="timeout_summary_2hours">2 saat</string>
+    <string name="timeout_summary_4hours">4 saat</string>
+    <string name="timeout_summary_8hours">8 saat</string>
+    <string name="camera_timeout_title">Kamera zaman aşımı</string>
+    <string name="camera_timeout_description">Kamera, kullanılmadığı zaman <xliff:g id="timeout_description">%1$s</xliff:g> sonra kapanacaktır</string>
+    <string name="camera_timeout_description2">Kamera erişimi otomatik olarak kapanmayacak</string>
+    <string name="mic_timeout_title">Mikrofon zaman aşımı</string>
+    <string name="mic_timeout_description">Mikrofon erişimi, kullanılmadığı zaman <xliff:g id="timeout_description">%1$s</xliff:g> sonra kapanacaktır</string>
+    <string name="mic_timeout_description2">Mikrofon erişimi otomatik olarak kapanmayacak</string>
 </resources>
